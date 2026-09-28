@@ -15,8 +15,8 @@
 ######################################
 # target
 ######################################
-TARGET_SERIES = STM32F411
-TARGET_VERSION = RE
+TARGET_SERIES = STM32F429
+TARGET_VERSION = ZI
 
 ######################################
 # building variables
@@ -53,7 +53,7 @@ endif
 # C sources
 
 ifeq ($(TARGET_SERIES), STM32F103)
-	SYS = CMSIS/Devices/STM32F1xx/Src/system_stm32f1xx.c \ CMSIS/Devices/Src/syscalls.c \ CMSIS/Devices/Src/sysmem.c
+	SYS = CMSIS/Devices/STM32F1xx/Src/system_stm32f1xx.c CMSIS/Devices/Src/syscalls.c CMSIS/Devices/Src/sysmem.c
 	CMSIS_INC_DEV = CMSIS/Devices/STM32F1xx/Inc
 	CMSIS_INC = CMSIS/Include
 	ifeq ($(TARGET_SERIES)$(TARGET_VERSION), STM32F103C8)
@@ -71,7 +71,7 @@ ifeq ($(TARGET_SERIES), STM32F103)
 	MFPU = NONE
 	TRGT_CFG = stm32f1x
 else ifeq ($(TARGET_SERIES), STM32F407)
-	SYS = CMSIS/Devices/STM32F4xx/Src/system_stm32f4xx.c \ CMSIS/Devices/Src/syscalls.c \ CMSIS/Devices/Src/sysmem.c
+	SYS = CMSIS/Devices/STM32F4xx/Src/system_stm32f4xx.c CMSIS/Devices/Src/syscalls.c CMSIS/Devices/Src/sysmem.c
 	ASM = STMDevices/STM32F407xx/startup_stm32f407xx.s
 	CMSIS_INC_DEV = CMSIS/Devices/STM32F4xx/Inc
 	CMSIS_INC_UNIT = CMSIS/Devices/STM32F4xx/Inc/STM32F407xx
@@ -84,7 +84,7 @@ else ifeq ($(TARGET_SERIES), STM32F407)
 	MFPU = fpv4-sp-d16 
 	TRGT_CFG = stm32f4x
 else ifeq ($(TARGET_SERIES), STM32F411)
-	SYS = CMSIS/Devices/STM32F4xx/Src/system_stm32f4xx.c \ CMSIS/Devices/Src/syscalls.c \ CMSIS/Devices/Src/sysmem.c
+	SYS = CMSIS/Devices/STM32F4xx/Src/system_stm32f4xx.c CMSIS/Devices/Src/syscalls.c CMSIS/Devices/Src/sysmem.c
 	ASM = STMDevices/STM32F411xe/startup_stm32f411xe.s
 	CMSIS_INC_DEV = CMSIS/Devices/STM32F4xx/Inc
 	CMSIS_INC_UNIT = CMSIS/Devices/STM32F4xx/Inc/STM32F411xE
@@ -101,7 +101,7 @@ else ifeq ($(TARGET_SERIES), STM32F411)
 	MFPU = fpv4-sp-d16
 	TRGT_CFG = stm32f4x
 else ifeq ($(TARGET_SERIES), STM32F429)
-	SYS = CMSIS/Devices/STM32F4xx/Src/system_stm32f4xx.c \ CMSIS/Devices/Src/syscalls.c \ CMSIS/Devices/Src/sysmem.c
+	SYS = CMSIS/Devices/STM32F4xx/Src/system_stm32f4xx.c CMSIS/Devices/Src/syscalls.c CMSIS/Devices/Src/sysmem.c
 	ASM = STMDevices/STM32F429xx/startup_stm32f429xx.s
 	CMSIS_INC_DEV = CMSIS/Devices/STM32F4xx/Inc
 	CMSIS_INC_UNIT = CMSIS/Devices/STM32F4xx/Inc/STM32F429xx
@@ -114,7 +114,7 @@ else ifeq ($(TARGET_SERIES), STM32F429)
 	MFPU = fpv4-sp-d16  #"vfpv4-d16"
 	TRGT_CFG = stm32f4x
 else ifeq ($(TARGET_SERIES), STM32F446)
-	SYS = CMSIS/Devices/STM32F4xx/Src/system_stm32f4xx.c \ CMSIS/Devices/Src/syscalls.c \ CMSIS/Devices/Src/sysmem.c
+	SYS = CMSIS/Devices/STM32F4xx/Src/system_stm32f4xx.c CMSIS/Devices/Src/syscalls.c CMSIS/Devices/Src/sysmem.c
 	ASM = STMDevices/STM32F446xx/startup_stm32f446xx.s
 	CMSIS_INC_DEV = CMSIS/Devices/STM32F4xx/Inc
 	CMSIS_INC_UNIT = CMSIS/Devices/STM32F4xx/Inc/STM32F446xx

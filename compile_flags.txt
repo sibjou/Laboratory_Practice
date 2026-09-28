@@ -1,0 +1,11 @@
+--target=arm-none-eabi
+-mcpu=cortex-m4
+-mthumb
+-mfloat-abi=hard
+-mfpu=fpv4-sp-d16
+-DSTM32F429xx
+-ICMSIS/Devices/STM32F4xx/Inc
+-ICMSIS/Devices/STM32F4xx/Inc/STM32F429xx
+-ICMSIS/Include
+-ICore/Inc
+-isystem/Applications/ArmGNUToolchain/15.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/../../../../arm-none-eabi/lib/../include

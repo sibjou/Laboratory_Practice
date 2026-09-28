@@ -1,0 +1,4 @@
+{
+    "cortex-debug.armToolchainPath": "/opt/homebrew/bin",
+    "cortex-debug.openocdPath": "/Users/suser/Tools/xpack-openocd-0.12.0-7/bin/openocd"
+}
